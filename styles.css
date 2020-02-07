@@ -127,10 +127,9 @@ p {
 }
 
 .about {
-  margin-top: 20px;
   width: 90vw;
   height: 50vw;
-  padding: 0 2em;
+  padding: 4em 2em 0;
   display: grid;
   grid-template-columns: 1.5fr 1fr 4fr ;
   grid-template-rows: 1fr 3.5fr 1fr;
