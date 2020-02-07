@@ -126,19 +126,8 @@ p {
   color: var(--text-secondary)
 }
 
-.app {
-  margin: 0 auto;
-  width: 70vw;
-}
-
-.app ul {
-  list-style-type: none;
-  display: block;
-  align-items: center;
-  margin: 0 2em;
-}
-
 .about {
+  margin-top: 20px;
   width: 90vw;
   height: 50vw;
   padding: 0 2em;
@@ -147,7 +136,7 @@ p {
   grid-template-rows: 1fr 3.5fr 1fr;
 }
 
-.about img{
+.about img {
   grid-column: 2 / 4;
   grid-row: 1 / 4;
   object-fit: cover;
