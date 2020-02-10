@@ -80,7 +80,7 @@ footer ul, .navbar ul {
   padding: 0 2em;
   display: grid;
   grid-template-columns: 4fr 2fr 2fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr;
 }
 
 .landing img {
@@ -119,7 +119,6 @@ p, span {
 
 span {
   color: #e85454;
-  text-decoration: underline;
 }
 
 p {
@@ -152,10 +151,22 @@ p {
   overflow: auto;
 }
 
-.project-card {
+.projects {
   width: 100%;
+}
+
+.projects ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
   background: var(--background-secondary);
-  padding: 2em;
+  width: 100%;
+} 
+
+.project-card {
+  margin: 0 5em;
+  padding: 3em;
 }
 
 .project-card img {
@@ -164,6 +175,7 @@ p {
   transition: all 0.3s ease 0s;
   border-radius: 5px;
   padding: 1em 0;
+  margin-bottom: 2em;
 }
 
 .project-card img:hover {
@@ -172,7 +184,6 @@ p {
 .project-card p {
   color: var(--text-secondary);
 }
-
 
 .project-card p {
   margin: 2em 0;
