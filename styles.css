@@ -109,6 +109,10 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  margin-bottom: 1em;
+}
+
 p, span {
   font-size: .75em;
   line-height: 1.5em;
@@ -166,7 +170,7 @@ p {
 
 .project-card {
   margin: 0 5em;
-  padding: 3em;
+  padding: 2em 3em;
 }
 
 .project-card img {
@@ -180,14 +184,6 @@ p {
 
 .project-card img:hover {
   box-shadow: 0 30px 30px rgba(0,0,0,.25);
-}
-.project-card p {
-  color: var(--text-secondary);
-}
-
-.project-card p {
-  margin: 2em 0;
-  line-height: 1.2em;
 }
 
 .responsive {
