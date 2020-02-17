@@ -72,8 +72,16 @@ footer ul, .navbar ul {
 
 .footer-links li, .navbar li {
   display: inline-block;
-  font-size: 1em;
+
   padding: .2em;
+}
+
+.navbar li {
+  font-size: .75em;
+}
+
+.footer-links li {
+  font-size: 2em;
 }
 
 .navbar li a {
@@ -100,8 +108,8 @@ footer ul, .navbar ul {
   height: 50vw;
   padding: 0 2em;
   display: grid;
-  grid-template-columns: 4fr 2fr 2fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-rows: 1fr 2fr;
 }
 
 .landing img {
@@ -122,6 +130,21 @@ footer ul, .navbar ul {
   background: var(--background);
   padding: 2em;
   overflow: hidden;
+}
+
+.about {
+  padding: 4em 2em 0;
+}
+
+.about img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.about-card {
+  background: var(--background);
+  padding: .5em 2em;
 }
 
 h3 {
@@ -164,7 +187,7 @@ p {
 } 
 
 .project-card {
-  margin: 0 5em;
+  margin: 0 1em;
   padding: 2em 3em;
 }
 
@@ -207,6 +230,12 @@ h1 {
 }
 
 @media (min-width: 600px) {
+
+  .landing {
+    grid-template-columns: 4fr 2fr 2fr;
+    grid-template-rows: 1fr 3fr;
+  }
+
   .about {
     width: 90vw;
     height: 50vw;
@@ -237,5 +266,12 @@ h1 {
     margin: 0 5em;
     padding: 2em 3em;
   }
+
+  .footer-links li, .navbar li {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1000px) {
 
 }
