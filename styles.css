@@ -33,8 +33,23 @@ header, footer {
   flex-flow: row wrap;
 }
 
-footer {
+footer, .skills {
   justify-content: center;
+  text-align: center;
+  background-color: rgb(50, 50, 75);
+}
+
+.skills {
+  padding: 2em 2em 0;
+  color: var(--background);
+}
+
+.skills ul {
+  list-style-type: none;
+}
+
+.skills ul li p {
+  color: var(--background);
 }
 
 header {
@@ -61,8 +76,15 @@ footer ul, .navbar ul {
   padding: .2em;
 }
 
-.footer-links li a, .navbar li a {
+.navbar li a {
   color: var(--text);
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  padding: 1em;
+}
+
+.footer-links li a {
+  color: var(--background);
   text-decoration: none;
   transition: all 0.3s ease 0s;
   padding: 1em;
@@ -71,7 +93,6 @@ footer ul, .navbar ul {
 .footer-links li a:hover, .navbar li a:hover {
   color: var(--link-hover);
 }
-
 
 .landing {
   margin-top: 3em;
@@ -129,32 +150,6 @@ p {
   color: var(--text-secondary)
 }
 
-.about {
-  width: 90vw;
-  height: 50vw;
-  padding: 4em 2em 0;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 4fr ;
-  grid-template-rows: 1fr 3.5fr 1fr;
-}
-
-.about img {
-  grid-column: 2 / 4;
-  grid-row: 1 / 4;
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.about-card {
-  grid-row: 1 / 3;
-  grid-column: 1 / 3;
-  background: var(--background);
-  padding: .5em 2em;
-  z-index: 1;
-  overflow: auto;
-}
-
 .projects {
   width: 100%;
 }
@@ -209,4 +204,38 @@ p {
 h1 {
   text-align: center;
   margin-top: 3em;
+}
+
+@media (min-width: 600px) {
+  .about {
+    width: 90vw;
+    height: 50vw;
+    padding: 4em 2em 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 4fr ;
+    grid-template-rows: 1fr 3.5fr 1fr;
+  }
+  
+  .about img {
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .about-card {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    background: var(--background);
+    padding: .5em 2em;
+    z-index: 1;
+    overflow: auto;
+  }
+
+  .project-card {
+    margin: 0 5em;
+    padding: 2em 3em;
+  }
+
 }

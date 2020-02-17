@@ -31,9 +31,22 @@ const PROJECTS = [
     }
 ]
 
+const SKILLS = {
+    "Tech": [
+        "React", "Redux", "Javascript", "Rails", "Sockets", "ActionCable", "ActionMailer", "Ruby", "Python", "HTML5", "CSS3", "MySQL", "PostgreSQL", "Heroku", "JWT", "Material UI", "Semantic UI", "Git & Github"
+    ],
+    "Data": [
+        "R", "Matlab", "SciKit Learn", "Pandas", "Matplot", "Numerical Analysis"
+    ],
+    "Creative": [
+        "Photoshop", "Lightroom", "P5.js", "Mo.js", 
+    ]
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const about = document.getElementById("text-card");
     const projectList = document.getElementById("project-list");
+    const skillList = document.getElementById("skill-list");
 
     // Populate about section
     (function() {
@@ -72,6 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     // Populate Skills
+    (function() {
+        for (const title in SKILLS) {
+            let li = document.createElement("li")
+            
+            let h4 = document.createElement("h4")
+            h4.innerText = title
 
+            let p = document.createElement("p")
+            p.innerText = SKILLS[title].join(", ")
+            console.log(SKILLS[title])
+
+            li.append(h4, p)
+            skillList.appendChild(li)
+        }
+    })();
     
 })
