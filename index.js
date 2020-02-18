@@ -33,13 +33,13 @@ const PROJECTS = [
 
 const SKILLS = {
     "Tech": [
-        "React", "Redux", "Javascript", "Rails", "Sockets", "ActionCable", "ActionMailer", "Ruby", "Python", "HTML5", "CSS3", "MySQL", "PostgreSQL", "Heroku", "JWT", "Material UI", "Semantic UI", "Git & Github"
+        "React", "Redux", "Javascript", "Rails", "Sockets", "ActionCable", "ActionMailer", "Ruby", "Python", "HTML5", "CSS3", "Mocha", "MySQL", "PostgreSQL", "Heroku", "JWT", "Material UI", "Semantic UI", "Git & Github"
     ],
     "Data": [
         "R", "Matlab", "SciKit Learn", "Pandas", "Matplot", "Numerical Analysis"
     ],
     "Creative": [
-        "Photoshop", "Lightroom", "P5.js", "Mo.js", 
+        "Photoshop", "Lightroom", "P5.js", "Mo.js", "Processing in Java"
     ]
 }
 
