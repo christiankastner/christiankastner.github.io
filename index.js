@@ -11,7 +11,7 @@ const PROJECTS = [
         meta: "Interactive Audio Visualizer",
         description: "A shared space for audio and visual artists to create on the same canvas simultaneously. By combining animation and audio in the browser with P5.js, UI state management with React Redux, and websocketing using ActionCable in rails, Virtual Canvas allows users to create shapes synced to audio and collaborate on a music visualizer together. Similar to a chatroom, one user holds administrative controls over the canvas, able to change background color and how different audio frequencies map onto the canvas to make the different shapes synced to the frequencies move. Now, all signed in users have the ability to hop into another user's canvas and build shapes synced to the treble, mid, or bass frequencies, specify how many shapes, how they rotate, and many other effects. And any change made from one user will render changes for all other users on the same canvas. Finally, users can then input any mp3 to see their collaborative canvas pulse and move to the audio, offering a unique experience to create with friends.",
         demo: "",
-        active: "",
+        active: "christianmkastner.com/virtual-canvas/#/",
     },
     {
         title: "Kangaroo Hangout",
@@ -19,7 +19,7 @@ const PROJECTS = [
         meta: "Event Planning App",
         description: "Want to plan a whole day's outing? Kangaroo Hangout is an event planning app that lets user's input places they'd like to go to, then search for nearby locations to also visit. Want Sushi after your Muay Thai class or a library near your favorite burger place? That's easy with kangaroo hangout. Places are found using google's Places API that are persisted to a Rails backend and served to a React frontend. Once users login, they can then input a location and search for any of the one hundred different place types offered by the Google Places API. Next, they can scan through the list and click which they'd like to build into their event. A user can search for any other place they'd like, adding it into the same event as the previous place. Once they've added all the different places they'd like to schedule, they choose a date using React Calendar and save it for later. This offers users a quick and easy way to find and plan activities close together, and hop from one to the next.",
         demo: "",
-        active: ""
+        active: null
     },
     {
         title: "Beat Poems",
@@ -27,7 +27,7 @@ const PROJECTS = [
         meta: "Poems and Natural Language Processing",
         description: "A single page app that makes your poems a little less ordinary. Users can input or write poems, then select what part of speech they'd like swapped, be it verb, noun, or adjective. Then Rita.js, a javascript Natural Language Processing library, combs through the text, flagging the flagged parts of speech and swapping them with a random word matching that part of speech in Rita.js's lexicon. This offers a fun way for users to inject a little chaos into their writing. Also, users can have their poems read aloud by over 100 different voices using the Responsive Voice API and can be even more chaotic with a special bongo-fied reading. Harnessing the asyncronous nature of javascript, Beat Poems queues API calls and bongo audio to mix speech and sound effects for true beatnik all read by the computer",
         demo: "",
-        active: ""
+        active: "christianmkastner.com/noun-swapper-frontend/"
     }
 ]
 
@@ -74,7 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
             h3.innerText = project.title
             h4 = document.createElement("h4")
             h4.innerText = project.meta
-            div.append(h3,h4)
+            link = document.createElement("a")
+            link.innerText = project.active || ""
+            link.href = `https://${link.innerText}`
+            gradient = document.createElement("div")
+            gradient.className = "gradient" 
+            div.append(h3,h4,link, gradient)
 
             p = document.createElement("p")
             p.innerText = project.description
