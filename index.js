@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
             link.href = `https://${link.innerText}`
             gradient = document.createElement("div")
             gradient.className = "gradient" 
-            div.append(h3,h4,link, gradient)
+            div.append(h3,h4,link)
 
             p = document.createElement("p")
             p.innerText = project.description
 
-            li.append(img,div,p)
+            li.append(img,div,p, gradient)
             projectList.appendChild(li)
         })
     })();
