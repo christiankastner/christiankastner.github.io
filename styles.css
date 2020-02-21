@@ -270,6 +270,16 @@ h1 {
   .footer-links li, .navbar li {
     font-size: 1em;
   }
+
+  .skills {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .skills ul {
+    width: 600px;
+  }
+
 }
 
 @media (min-width: 1000px) {
