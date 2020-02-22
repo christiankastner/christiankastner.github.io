@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ABOUT.map(paragraph => {
             p = document.createElement("p")
             p.innerText = paragraph
+            a = document.createElement('a')
+            a.innerText = 'See My Resume'
             about.appendChild(p)
         })
     })();
