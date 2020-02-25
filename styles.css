@@ -283,6 +283,11 @@ h1 {
     margin: 0 5em;
     padding: 2em 3em;
   }
+  
+  .project-card p {
+    column-count: 2;
+    text-align: justify;
+  }
 
   .footer-links li, .navbar li {
     font-size: 1em;
