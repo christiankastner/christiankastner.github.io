@@ -10,7 +10,7 @@ const PROJECTS = [
         img: "./public/virtual_canvas.png",
         meta: "Interactive Audio Visualizer",
         description: "A shared space for audio and visual artists to create on the same canvas simultaneously. By combining animation and audio in the browser with P5.js, UI state management with React Redux, and websocketing using ActionCable in rails, Virtual Canvas allows users to create shapes synced to audio and collaborate on a music visualizer together. Similar to a chatroom, one user holds administrative controls over the canvas, able to change background color and how different audio frequencies map onto the canvas to make the different shapes synced to the frequencies move. Now, all signed in users have the ability to hop into another user's canvas and build shapes synced to the treble, mid, or bass frequencies, specify how many shapes, how they rotate, and many other effects. And any change made from one user will render changes for all other users on the same canvas. Finally, users can then input any mp3 to see their collaborative canvas pulse and move to the audio, offering a unique experience to create with friends.",
-        demo: "",
+        demo: "https://www.youtube.com/embed/qsTvRDrYrx0",
         active: "christianmkastner.com/virtual-canvas/#/",
         github: {
             frontend: 'https://github.com/christiankastner/virtual-canvas',
@@ -55,6 +55,13 @@ const SKILLS = {
     ]
 }
 
+const renderDemo = (url) => {
+    let iframe = document.createElement("div")
+    iframe.className = "responsive"
+    iframe.innerHTML = `<iframe width="560" height="315" src="${url}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>`
+    return iframe
+} 
+
 document.addEventListener('DOMContentLoaded', () => {
     const about = document.getElementById("text-card");
     const projectList = document.getElementById("project-list");
@@ -65,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ABOUT.map(paragraph => {
             p = document.createElement("p")
             p.innerText = paragraph
-            // a.href
             about.appendChild(p)
         })
     })();
@@ -91,13 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
             link.innerText = project.active || ""
             link.href = `https://${link.innerText}`
             gradient = document.createElement("div")
-            gradient.className = "gradient" 
+            gradient.className = "gradient"
             div.append(h3,h4,link)
 
             p = document.createElement("p")
             p.innerText = project.description
+            iframe = renderDemo(project.demo)
 
-            li.append(img,div,p, gradient)
+            li.append(img,div,p,iframe,gradient)
             projectList.appendChild(li)
         })
     })();
@@ -112,11 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let p = document.createElement("p")
             p.innerText = SKILLS[title].join(", ")
-            console.log(SKILLS[title])
 
             li.append(h4, p)
             skillList.appendChild(li)
         }
     })();
-    
 })
