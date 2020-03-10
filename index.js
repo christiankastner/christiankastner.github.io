@@ -22,7 +22,7 @@ const PROJECTS = [
         img: "./public/hangout.png",
         meta: "Event Planning App",
         description: "Want to plan a whole day's outing? Kangaroo Hangout is an event planning app that lets user's input places they'd like to go to, then search for nearby locations to also visit. Want Sushi after your Muay Thai class or a library near your favorite burger place? That's easy with kangaroo hangout. Places are found using google's Places API that are persisted to a Rails backend and served to a React frontend. Once users login, they can then input a location and search for any of the one hundred different place types offered by the Google Places API. Next, they can scan through the list and click which they'd like to build into their event. A user can search for any other place they'd like, adding it into the same event as the previous place. Once they've added all the different places they'd like to schedule, they choose a date using React Calendar and save it for later. This offers users a quick and easy way to find and plan activities close together, and hop from one to the next.",
-        demo: "",
+        demo: "https://www.youtube.com/embed/iZrBZusBhJQ",
         active: null,
         github: {
             frontend: 'https://github.com/christiankastner/kangaroo-hangout-frontend',
@@ -34,7 +34,7 @@ const PROJECTS = [
         img: "./public/poems.png",
         meta: "Poems and Natural Language Processing",
         description: "A single page app that makes your poems a little less ordinary. Users can input or write poems, then select what part of speech they'd like swapped, be it verb, noun, or adjective. Then Rita.js, a javascript Natural Language Processing library, combs through the text, flagging the flagged parts of speech and swapping them with a random word matching that part of speech in Rita.js's lexicon. This offers a fun way for users to inject a little chaos into their writing. Also, users can have their poems read aloud by over 100 different voices using the Responsive Voice API and can be even more chaotic with a special bongo-fied reading. Harnessing the asyncronous nature of javascript, Beat Poems queues API calls and bongo audio to mix speech and sound effects for true beatnik all read by the computer",
-        demo: "",
+        demo: null,
         active: "christianmkastner.com/noun-swapper-frontend/",
         github: {
             frontend: 'https://github.com/christiankastner/noun-swapper-frontend',
@@ -56,11 +56,24 @@ const SKILLS = {
 }
 
 const renderDemo = (url) => {
+    if (url == null) return ""
     let iframe = document.createElement("div")
     iframe.className = "responsive"
     iframe.innerHTML = `<iframe width="560" height="315" src="${url}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>`
     return iframe
 } 
+
+const renderLinks = (...links) => {
+    ul = document.createElement("ul")
+    ul.className = "links"
+    let newArray = links.map(x => {
+        link = document.createElement("li")
+        link.append(x)
+        return link
+    })
+    ul.append(...newArray)
+    return ul
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const about = document.getElementById("text-card");
@@ -93,18 +106,35 @@ document.addEventListener('DOMContentLoaded', () => {
             h3.innerText = project.title
             h4 = document.createElement("h4")
             h4.innerText = project.meta
-            link = document.createElement("a")
-            link.innerText = project.active || ""
-            link.href = `https://${link.innerText}`
+            demo = document.createElement("a")
+            demo.innerText = project.active || "Not Deployed, Currently Developing"
+            if (project.active) {
+                demo.href = `https://${demo.innerText}`
+            }
+
+            frontend = document.createElement("a")
+            frontend.innerText = "Frontend"
+            frontend.href = project.github.frontend
+
+            backend = document.createElement("a")
+            backend.innerText = "Backend"
+            backend.href = project.github.backend
+
+            links = renderLinks(demo, frontend, backend)
+
             gradient = document.createElement("div")
             gradient.className = "gradient"
-            div.append(h3,h4,link)
+            div.append(h3,h4,links)
 
             p = document.createElement("p")
             p.innerText = project.description
             iframe = renderDemo(project.demo)
 
-            li.append(img,div,p,iframe,gradient)
+            container = document.createElement("div")
+            container.className = "text-container"
+            container.append(iframe)
+
+            li.append(img,div,p,container,gradient)
             projectList.appendChild(li)
         })
     })();

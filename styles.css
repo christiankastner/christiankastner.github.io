@@ -194,6 +194,12 @@ p {
   padding-bottom: 2.5em;
 } 
 
+.text-container {
+  display: flex;
+  justify-content: space-evenly;
+  max-height: 400px;
+}
+
 .responsive {
   position: relative;
   padding-bottom: 56.25%;
@@ -224,6 +230,18 @@ p {
   margin-bottom: 1em;
 }
 
+.project-card ul {
+  padding: 0;
+}
+
+.links li {
+  padding: 0 0 .5em;
+}
+
+.links li a {
+  color: var(--link-hover);
+}
+
 .gradient {
   margin: 1em 0;
   background: var(--text-secondary);
@@ -231,32 +249,12 @@ p {
   height: .2em;
 }
 
-.responsive {
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  position: relative;
-}
-
-.responsive iframe {
-  border-radius: 5px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 5px 5px rgba(0,0,0,.25);
-  transition: all 0.3s ease 0s;
-}
-
-.responsive iframe:hover {
-  box-shadow: 0 20px 20px rgba(0,0,0,.25);
-}
-
 h1 {
   text-align: center;
   margin-top: 3em;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 700px){
 
   .landing {
     grid-template-columns: 4fr 2fr 2fr;
@@ -310,6 +308,10 @@ h1 {
 
   .skills ul {
     width: 600px;
+  }
+
+  #project-list {
+    max-width: 875;
   }
 
 }
