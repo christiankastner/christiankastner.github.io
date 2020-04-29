@@ -23,7 +23,7 @@ const PROJECTS = [
         meta: "Event Planning App",
         description: "Want to plan a whole day's outing? Kangaroo Hangout is an event planning app that lets user's input places they'd like to go to, then search for nearby locations to also visit. Want Sushi after your Muay Thai class or a library near your favorite burger place? That's easy with kangaroo hangout. Places are found using google's Places API that are persisted to a Rails backend and served to a React frontend. Once users login, they can then input a location and search for any of the one hundred different place types offered by the Google Places API. Next, they can scan through the list and click which they'd like to build into their event. A user can search for any other place they'd like, adding it into the same event as the previous place. Once they've added all the different places they'd like to schedule, they choose a date using React Calendar and save it for later. This offers users a quick and easy way to find and plan activities close together, and hop from one to the next.",
         demo: "https://www.youtube.com/embed/iZrBZusBhJQ",
-        active: 'https://christianmkastner.com/kangaroo-hangout-frontend/',
+        active: 'https://christianmkastner.com/kangaroo-hangout-frontend/#/',
         github: {
             frontend: 'https://github.com/christiankastner/kangaroo-hangout-frontend',
             backend: 'https://github.com/christiankastner/kangaroo-hangout-backend-api'
@@ -75,7 +75,16 @@ const renderLinks = (...links) => {
     return ul
 }
 
+const get = element => document.getElementById(element);
+
 document.addEventListener('DOMContentLoaded', () => {
+    let open = get("menu-btn");
+    let nav = get("nav");
+
+    open.addEventListener('click', () => {
+        nav.classList.toggle('open-nav');
+    })
+
     const about = document.getElementById("text-card");
     const projectList = document.getElementById("project-list");
     const skillList = document.getElementById("skill-list");
