@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.className = "text-container"
             container.append(iframe)
 
-            li.append(img,div,p,tags,container,gradient)
+            li.append(img,div,p,container,tags,gradient)
             projectList.appendChild(li)
         })
     })();
