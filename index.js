@@ -6,41 +6,43 @@ const ABOUT = [
 
 const PROJECTS = [
     {
+        title: "Beat Poems",
+        img: "./public/poems.png",
+        meta: "Poems and Natural Language Processing",
+        description: "A single page app that makes your poems a little less ordinary. Input a poem and Bongo Cat will do it's own spin on your material. Then let Bongo Cat read it aloud, accompanied with some sweet bongos. Enjoy!",
+        demo: null,
+        active: "https://christianmkastner.com/beat-poems/",
+        github: {
+            frontend: 'https://github.com/christiankastner/beat-poems',
+        },
+        tags: ["JavaScript", "Webpack", "Babel", "SASS", "SVG", "Adobe Illustrator"]
+    },
+    {
         title: "Virtual Canvas",
         img: "./public/virtual_canvas.png",
         meta: "Interactive Audio Visualizer",
-        description: "A shared space for audio and visual artists to create on the same canvas simultaneously. By combining animation and audio in the browser with P5.js, UI state management with React Redux, and websocketing using ActionCable in rails, Virtual Canvas allows users to create shapes synced to audio and collaborate on a music visualizer together. Similar to a chatroom, one user holds administrative controls over the canvas, able to change background color and how different audio frequencies map onto the canvas to make the different shapes synced to the frequencies move. Now, all signed in users have the ability to hop into another user's canvas and build shapes synced to the treble, mid, or bass frequencies, specify how many shapes, how they rotate, and many other effects. And any change made from one user will render changes for all other users on the same canvas. Finally, users can then input any mp3 to see their collaborative canvas pulse and move to the audio, offering a unique experience to create with friends.",
+        description: "A shared space for audio and visual artists to create on the same canvas simultaneously. By combining animation and audio in the browser with P5.js, UI state management with React Redux, and websocketing using ActionCable in rails, Virtual Canvas allows users to create shapes synced to audio and collaborate on a music visualizer together.",
         demo: "https://www.youtube.com/embed/qsTvRDrYrx0",
-        active: "christianmkastner.com/virtual-canvas/#/",
+        active: "https://christianmkastner.com/virtual-canvas/#/",
         github: {
             frontend: 'https://github.com/christiankastner/virtual-canvas',
             backend: 'https://github.com/christiankastner/virtual_canvas_backend_api'
-        }
+        },
+        tags: ["React", "Ruby on Rails", "Web Sockets", "Redux", "SASS", "Firebase Cloud Storage"]
     },
     {
         title: "Kangaroo Hangout",
         img: "./public/hangout.png",
         meta: "Event Planning App",
-        description: "Want to plan a whole day's outing? Kangaroo Hangout is an event planning app that lets user's input places they'd like to go to, then search for nearby locations to also visit. Want Sushi after your Muay Thai class or a library near your favorite burger place? That's easy with kangaroo hangout. Places are found using google's Places API that are persisted to a Rails backend and served to a React frontend. Once users login, they can then input a location and search for any of the one hundred different place types offered by the Google Places API. Next, they can scan through the list and click which they'd like to build into their event. A user can search for any other place they'd like, adding it into the same event as the previous place. Once they've added all the different places they'd like to schedule, they choose a date using React Calendar and save it for later. This offers users a quick and easy way to find and plan activities close together, and hop from one to the next.",
+        description: "Want to plan a whole day's outing? Kangaroo Hangout is an event planning app that lets user's input places they'd like to go to, then search for nearby locations to also visit. Want Sushi after your Muay Thai class or a library near your favorite burger place? That's easy with kangaroo hangout.",
         demo: "https://www.youtube.com/embed/iZrBZusBhJQ",
         active: 'https://christianmkastner.com/kangaroo-hangout-frontend/#/',
         github: {
             frontend: 'https://github.com/christiankastner/kangaroo-hangout-frontend',
             backend: 'https://github.com/christiankastner/kangaroo-hangout-backend-api'
-        }
+        },
+        tags: ["React", "Ruby on Rails", "JWT", "Google Places API", "Semantic UI"]
     },
-    {
-        title: "Beat Poems",
-        img: "./public/poems.png",
-        meta: "Poems and Natural Language Processing",
-        description: "A single page app that makes your poems a little less ordinary. Users can input or write poems, then select what part of speech they'd like swapped, be it verb, noun, or adjective. Then Rita.js, a javascript Natural Language Processing library, combs through the text, flagging the flagged parts of speech and swapping them with a random word matching that part of speech in Rita.js's lexicon. This offers a fun way for users to inject a little chaos into their writing. Also, users can have their poems read aloud by over 100 different voices using the Responsive Voice API and can be even more chaotic with a special bongo-fied reading. Harnessing the asyncronous nature of javascript, Beat Poems queues API calls and bongo audio to mix speech and sound effects for true beatnik all read by the computer",
-        demo: null,
-        active: "christianmkastner.com/noun-swapper-frontend/",
-        github: {
-            frontend: 'https://github.com/christiankastner/noun-swapper-frontend',
-            backend: 'https://github.com/christiankastner/noun-swapper-backend'
-        }
-    }
 ]
 
 const SKILLS = {
@@ -66,7 +68,7 @@ const renderDemo = (url) => {
 const renderLinks = (...links) => {
     ul = document.createElement("ul")
     ul.className = "links"
-    let newArray = links.map(x => {
+    let newArray = links.filter(x => x).map(x => {
         link = document.createElement("li")
         link.append(x)
         return link
@@ -75,19 +77,21 @@ const renderLinks = (...links) => {
     return ul
 }
 
-const get = element => document.getElementById(element);
+function get(element) {
+    return document.getElementById(element);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    let open = get("menu-btn");
-    let nav = get("nav");
+    var open = get("menu-btn");
+    var nav = get("nav");
 
     open.addEventListener('click', () => {
         nav.classList.toggle('open-nav');
     })
 
-    const about = document.getElementById("text-card");
-    const projectList = document.getElementById("project-list");
-    const skillList = document.getElementById("skill-list");
+    var about = document.getElementById("text-card");
+    var projectList = document.getElementById("project-list");
+    var skillList = document.getElementById("skill-list");
 
     // Populate about section
     (function() {
@@ -116,17 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
             h4 = document.createElement("h4")
             h4.innerText = project.meta
             demo = document.createElement("a")
-            demo.innerText = project.active || "Not Deployed, Currently Developing"
+            demo.innerText = "Live Site" || "Not Deployed, Currently Developing"
             if (project.active) {
-                demo.href = `https://${demo.innerText}`
+                demo.href = project.active
             }
 
             frontend = document.createElement("a")
-            frontend.innerText = "Frontend"
+            project.github.frontend ? frontend.innerText = "Frontend" : ""
             frontend.href = project.github.frontend
 
+
             backend = document.createElement("a")
-            backend.innerText = "Backend"
+            project.github.backend ? backend.innerText = "Backend" : 
             backend.href = project.github.backend
 
             links = renderLinks(demo, frontend, backend)
@@ -134,6 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
             gradient = document.createElement("div")
             gradient.className = "gradient"
             div.append(h3,h4,links)
+
+            tags = document.createElement("div")
+
+            tags.innerHTML = project.tags.map(function(x) {
+                return "<span>" + x + "</span>"
+            }).join(" - ")
+
+            tags.classList.add("tags")
 
             p = document.createElement("p")
             p.innerText = project.description
@@ -143,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.className = "text-container"
             container.append(iframe)
 
-            li.append(img,div,p,container,gradient)
+            li.append(img,div,p,tags,container,gradient)
             projectList.appendChild(li)
         })
     })();

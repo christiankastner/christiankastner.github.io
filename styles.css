@@ -19,8 +19,8 @@
 
 body {
   background-color:var(--background);
-  min-height: 100%;
-  width: 100%;
+  height: 100%;
+  width: 100vw;
   font-family: "Muli", sans-serif;
   color: var(--text);
 }
@@ -110,7 +110,7 @@ header li a {
 
 .landing {
   margin-top: 2em;
-  width: 90vw;
+  width: 100%;
   height: 50vw;
   padding: 0 3em;
   display: grid;
@@ -282,6 +282,11 @@ header svg {
   display: unset;
 }
 
+.tags {
+
+    text-align: center;
+}
+
 @media (min-width: 700px){
 
   header svg {
@@ -333,8 +338,7 @@ header svg {
   }
   
   .project-card p {
-    column-count: 2;
-    text-align: justify;
+    font-size: 14px;
   }
 
   header li {
