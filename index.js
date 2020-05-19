@@ -9,7 +9,7 @@ const PROJECTS = [
         title: "Beat Poems",
         img: "./public/poems.png",
         meta: "Poems and Natural Language Processing",
-        description: "A single page app that makes your poems a little less ordinary. Input a poem and Bongo Cat will do it's own spin on your material. Then let Bongo Cat read it aloud, accompanied with some sweet bongos. Enjoy!",
+        description: "A single page app that makes your poems a little less ordinary. Input a poem and Bongo Cat will do it's own spin on your material. Then let Bongo Cat read it aloud, accompanied with some sweet bongos.",
         demo: null,
         active: "https://christianmkastner.com/beat-poems/",
         github: {
