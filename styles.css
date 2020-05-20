@@ -23,6 +23,9 @@ body {
   width: 100vw;
   font-family: "Muli", sans-serif;
   color: var(--text);
+}
+
+.wrapper {
   overflow-x: hidden;
 }
 

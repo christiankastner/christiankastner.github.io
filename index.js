@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
             project.github.frontend ? frontend.innerText = "Frontend" : ""
             frontend.href = project.github.frontend
 
-
             backend = document.createElement("a")
             project.github.backend ? backend.innerText = "Backend" : 
             backend.href = project.github.backend
