@@ -81,11 +81,14 @@ function get(element) {
     return document.getElementById(element);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     var open = get("menu-btn");
     var nav = get("nav");
-
-    open.addEventListener('click', () => {
+    
+    open.addEventListener('click', function() {
+        nav.classList.toggle('open-nav');
+    })
+    nav.addEventListener('click', function() {
         nav.classList.toggle('open-nav');
     })
 

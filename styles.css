@@ -259,6 +259,10 @@ h1 {
   margin-top: 3em;
 }
 
+nav {
+  overflow: hidden;
+}
+
 nav ul {
   display: flex;
   flex-direction: column;
@@ -369,5 +373,14 @@ header svg {
 
   .project-card img {
     margin: 0 1em 2em;
+  }
+}
+
+@keyframes scrollIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
