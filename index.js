@@ -47,7 +47,7 @@ const PROJECTS = [
 
 const SKILLS = {
     "Tech": [
-        "React", "Redux", "Javascript", "Rails", "Sockets", "ActionCable", "ActionMailer", "Ruby", "Python", "HTML5", "CSS3", "Jest", "MySQL", "PostgreSQL", "Heroku", "JWT", "Material UI", "Semantic UI", "Git & Github"
+        "React", "Redux", "Javascript", "Rails", "Sockets", "ActionCable", "Ruby", "Python", "HTML5", "CSS3", "SASS/SCSS", "Jest", "MySQL", "PostgreSQL", "Heroku", "JWT", "Material UI", "Semantic UI", "Git & Github"
     ],
     "Data": [
         "R", "Matlab", "SciKit Learn", "Pandas", "Matplotlib", "Numerical Analysis"
