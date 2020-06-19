@@ -53,7 +53,7 @@ const SKILLS = {
         "R", "Matlab", "SciKit Learn", "Pandas", "Matplotlib", "Numerical Analysis"
     ],
     "Creative": [
-        "Photoshop", "Illustrator", "Lightroom", "P5.js", "Mo.js", "Processing in Java"
+        "Photoshop", "Illustrator", "XD", "Lightroom", "P5.js", "Mo.js", "Processing in Java"
     ],
 }
 
