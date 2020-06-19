@@ -53,8 +53,8 @@ const SKILLS = {
         "R", "Matlab", "SciKit Learn", "Pandas", "Matplotlib", "Numerical Analysis"
     ],
     "Creative": [
-        "Photoshop", "Lightroom", "P5.js", "Mo.js", "Processing in Java"
-    ]
+        "Photoshop", "Illustrator", "Lightroom", "P5.js", "Mo.js", "Processing in Java"
+    ],
 }
 
 const renderDemo = (url) => {
