@@ -1,7 +1,11 @@
 const ABOUT = [
-    "I'm a full-stack software engineer with a background in both the arts and the sciences. I love being creative and experimenting with new technology, such as graphical computing, natural language processing, and machine learning. Combining art and technology is a passion of mine as well as using software to build new user experiences.",
-    "I'm currently looking for work as a frontend or full-stack developer. I am skilled in JavaScript, Ruby, Rails, React, Python, and currently teaching myself Jest and React Testing Library. I also have significant experience within data science and numerical computing, having used R for my masters dissertaion and coursework, as well as matlab for courses in machine learning and numerical analysis.",
-    "My previous experience includes a Masters in Psychology from the University of Glasgow, and Bachelors degrees in Philosophy and Mathematics from University of California, Los Angeles. My introduction into web development was through an interest in machine learning as a tool for Psychology research and inpatient/outpatient procedure. However, I quickly fell in love with the creative side of coding, experimenting with design and interface. This duality makes me versatile in tackling the varied problems presented in web development."
+    "I'm an interdisciplinary frontend engineer with a passion for design and creativity. I love creating interesting and unique experiences through software and working with designers.",
+
+    "I'm actively seeking new opportunities with companies that value developers with an eye for detail and design.",
+    
+    "See some work samples below. I think that Virtual Canvas is my best work, showcasing an understanding of difficult web technologies including websockets and cloud storage as well as displaying thoughtful design and a creative web experience.",
+    
+    "You can reach me at christianmkastner@gmail.com."
 ]
 
 const PROJECTS = [
