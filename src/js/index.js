@@ -70,10 +70,10 @@ const renderDemo = (url) => {
 } 
 
 const renderLinks = (...links) => {
-    ul = document.createElement("ul")
+    const ul = document.createElement("ul")
     ul.className = "links"
     let newArray = links.filter(x => x).map(x => {
-        link = document.createElement("li")
+        const link = document.createElement("li")
         link.append(x)
         return link
     })
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Populate about section
     (function() {
         ABOUT.map(paragraph => {
-            p = document.createElement("p")
+            const p = document.createElement("p")
             p.innerText = paragraph
             about.appendChild(p)
         })
@@ -112,41 +112,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // Populate project list
     (function() {
         PROJECTS.map(project => {
-            li = document.createElement("li")
+            const li = document.createElement("li")
             li.className = "project-card"
 
-            img = document.createElement("img")
+            const img = document.createElement("img")
             img.src = project.img
             img.alt = `${project.title} picture`
 
-            div = document.createElement("div")
+            const div = document.createElement("div")
             div.className = "project-header"
 
-            h3 = document.createElement("h3")
+            const h3 = document.createElement("h3")
             h3.innerText = project.title
-            h4 = document.createElement("h4")
+            const h4 = document.createElement("h4")
             h4.innerText = project.meta
-            demo = document.createElement("a")
+            const demo = document.createElement("a")
             demo.innerText = "Live Site" || "Not Deployed, Currently Developing"
             if (project.active) {
                 demo.href = project.active
             }
 
-            frontend = document.createElement("a")
+            const frontend = document.createElement("a")
             project.github.frontend ? frontend.innerText = "Frontend" : ""
             frontend.href = project.github.frontend
 
-            backend = document.createElement("a")
+            const backend = document.createElement("a")
             project.github.backend ? backend.innerText = "Backend" : 
             backend.href = project.github.backend
 
-            links = renderLinks(demo, frontend, backend)
+            const links = renderLinks(demo, frontend, backend)
 
-            gradient = document.createElement("div")
+            const gradient = document.createElement("div")
             gradient.className = "gradient"
             div.append(h3,h4,links)
 
-            tags = document.createElement("div")
+            const tags = document.createElement("div")
 
             tags.innerHTML = project.tags.map(function(x) {
                 return "<span>" + x + "</span>"
@@ -154,16 +154,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             tags.classList.add("tags")
 
-            p = document.createElement("p")
+            const p = document.createElement("p")
             p.innerText = project.description
-            iframe = renderDemo(project.demo)
+            const iframe = renderDemo(project.demo)
 
-            container = document.createElement("div")
+            const container = document.createElement("div")
             container.className = "text-container"
             container.append(iframe)
 
             li.append(img,div,p,container,tags,gradient)
-            projectList.appendChild(li)
+            projectList.appendChild(li) 
         })
     })();
 
