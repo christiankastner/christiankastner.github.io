@@ -24,7 +24,7 @@ gulp.task('js', function() {
     }))
     .pipe(concat('concat.js')) //this will concat all the files into concat.js
     .pipe(gulp.dest(baseDir + "/concat")) //this will save concat.js in a temp directory defined above
-    .pipe(rename('index.js')) //this will rename concat.js to uglify.js
+    .pipe(rename('index.js')) //this will rename concat.js to index.js
     .pipe(uglify()) //this will uglify/minify uglify.js
     .pipe(gulp.dest(targetDir + "/js"));
 })
