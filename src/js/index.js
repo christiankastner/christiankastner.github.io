@@ -1,3 +1,4 @@
+console.log("Hello")
 const ABOUT = [
     "I'm an interdisciplinary frontend engineer with a passion for design and creativity. I love creating interesting and unique experiences through software and working with designers.",
 

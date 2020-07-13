@@ -12,6 +12,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+console.log("Hello");
 var ABOUT = ["I'm an interdisciplinary frontend engineer with a passion for design and creativity. I love creating interesting and unique experiences through software and working with designers.", "I'm actively seeking new opportunities with companies that value developers with an eye for detail and design.", "See some work samples below. I think that Virtual Canvas is my best work, showcasing an understanding of difficult web technologies including websockets and cloud storage as well as displaying thoughtful design and a creative web experience.", "You can reach me at christianmkastner@gmail.com."];
 var PROJECTS = [{
   title: "Beat Poems",
