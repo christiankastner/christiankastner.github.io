@@ -1,5 +1,4 @@
 const images = document.querySelectorAll("[data-src]");
-console.log(images)
 
 const options = {
     threshold: 0,
@@ -13,8 +12,9 @@ function preloadImage(img) {
         return;
     } 
     img.src = src;
-    img.classList.toggle("img-loaded")
+
     img.classList.toggle("img-loading")
+    img.classList.toggle("img-loaded")
 }
 
 const imgObserver = new IntersectionObserver((entries, imgObserver) => {

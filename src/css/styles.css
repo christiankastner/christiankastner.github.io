@@ -372,6 +372,11 @@ header svg {
 
 }
 
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 10s;
+}
+
 @media only screen and (min-width: 1000px) {
   .project-card {
     margin: 0 80px;
@@ -400,17 +405,14 @@ header svg {
     opacity: 1
   }
 }
-
 .img-loading {
   opacity: 0;
   width: 100%;
   height: auto;
 }
-
 .img-loaded {
   animation: fadeInImg cubic-bezier(0.23, 1, 0.32, 1) 1;
   position: relative;
-  opacity: 1;
   animation-fill-mode: forwards;
   animation-duration: 0.7s;
   animation-delay: 0.1s;

@@ -32,12 +32,16 @@ gulp.task('js', function() {
 gulp.task('js:watch', function() {
     gulp.watch(baseDir + '/js/**/*.js', gulp.series('js'))
 })
+gulp.task('watch', function() {
+    gulp.watch(baseDir + '/js/**/*.js', gulp.series('js'))
+    gulp.watch(baseDir + '/css/**/*.css', gulp.series('css'))
+})
 
 gulp.task('css', () => {
     return gulp.src(baseDir + '/css/*.css')
       .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(gulp.dest(targetDir));
-  });
+});
 
 gulp.task('imagemin', function() {
     return gulp.src(baseDir + '/assets/*')
