@@ -12,7 +12,6 @@ function preloadImage(img) {
         return;
     } 
     img.src = src;
-
     img.classList.toggle("img-loading")
     img.classList.toggle("img-loaded")
 }

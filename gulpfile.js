@@ -8,10 +8,11 @@ var imagemin = require('gulp-imagemin')
 var rename = require('gulp-rename')
 var babel = require('gulp-babel');
 var htmlmin = require('gulp-htmlmin');
+var webp = require('gulp-webp');
 
 
 var baseDir = "./src"
-var targetDir = "."
+var targetDir = "./"
 
 gulp.task('sass:watch', function() {
     gulp.watch(baseDir + '/**/*.scss', gulp.series('sass'));
@@ -50,6 +51,16 @@ gulp.task('imagemin', function() {
         imagemin.optipng({optimizationLevel: 5})
     ]))
     .pipe(gulp.dest(targetDir + 'public'))
+})
+
+gulp.task('imageNextGen', function() {
+    return gulp.src(baseDir + '/assets/*')
+    .pipe(imagemin([
+        imagemin.mozjpeg({quality: 75, progressive: true}),
+        imagemin.optipng({optimizationLevel: 5})
+    ]))
+    .pipe(webp())
+    .pipe(gulp.dest(targetDir + "public"))
 })
  
 gulp.task('html', () => {

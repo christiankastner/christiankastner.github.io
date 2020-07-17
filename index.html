@@ -75,11 +75,19 @@
                 </span>
             </div>
           </div> 
-          <img class="img-loading" data-src="./public/portrait.png" alt="Line portrait"/> 
+          <picture>
+            <source type="image/webp" srcset="./public/portrait.webp">
+            <source type="image/jpeg" srcset="./public/portrait.jpg">
+            <img class="img-loading" data-src="./public/portrait.png" alt="Line portrait"/> 
+          </picture>
         </div>
       </section>
       <section class="about" id="about">
-        <img class="img-loading" data-src="./public/perlin.png" alt="Flowing line art"/>
+        <picture>
+          <!-- <source type="image/webp" srcset="./public/perlin.webp">
+          <source type="image/jpeg" srcset="./public/perlin.jpg"> -->
+          <img class="img-loading" data-src="./public/perlin.png" alt="Flowing line art">
+        </picture>
         
         <div class="about-card" id="about-card">
             <h3>About</h3>
