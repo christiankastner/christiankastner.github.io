@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var li = document.createElement("li");
       li.className = "project-card";
       var img = document.createElement("img");
-      img.src = project.img;
+      img["src"] = project.img;
       img.alt = "".concat(project.title, " picture");
       var div = document.createElement("div");
       div.className = "project-header";
@@ -166,4 +166,39 @@ document.addEventListener('DOMContentLoaded', function () {
       skillList.appendChild(li);
     }
   })();
+});
+"use strict";
+
+var images = document.querySelectorAll("[data-src]");
+console.log(images);
+var options = {
+  threshold: 0,
+  rootMargin: "0px 0px 300px 0px"
+};
+
+function preloadImage(img) {
+  var src = img.getAttribute("data-src");
+  console.log(src);
+
+  if (!src) {
+    return;
+  }
+
+  img.src = src;
+  img.classList.toggle("img-loaded");
+  img.classList.toggle("img-loading");
+}
+
+var imgObserver = new IntersectionObserver(function (entries, imgObserver) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      preloadImage(entry.target);
+      imgObserver.unobserve(entry.target);
+    } else {
+      return;
+    }
+  });
+}, options);
+images.forEach(function (image) {
+  imgObserver.observe(image);
 });

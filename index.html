@@ -20,14 +20,13 @@
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/ico" href="" />
     <!-- SCRIPTS -->
-    <script src="js/index.js"></script>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="content">
 
       <header>
-          <img src="">
+          <img data-src="">
           <svg id="menu-btn" viewBox="0 0 100 80" width="40" height="40">
             <rect width="100" height="20"></rect>
             <rect y="30" width="100" height="20"></rect>
@@ -76,11 +75,11 @@
                 </span>
             </div>
           </div> 
-          <img src="./public/portrait.png" alt="line portrait"/> 
+          <img class="img-loading" data-src="./public/portrait.png" alt="Line portrait"/> 
         </div>
       </section>
       <section class="about" id="about">
-        <img src="./public/perlin.png" alt="flowing line art"/>
+        <img class="img-loading" data-src="./public/perlin.png" alt="Flowing line art"/>
         
         <div class="about-card" id="about-card">
             <h3>About</h3>
@@ -117,4 +116,5 @@
         </footer>
     </div>
   </body>
+  <script src="js/index.js"></script>
 </html>

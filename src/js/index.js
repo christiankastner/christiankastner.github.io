@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             li.className = "project-card"
 
             const img = document.createElement("img")
-            img.src = project.img
+            img["src"] = project.img
             img.alt = `${project.title} picture`
 
             const div = document.createElement("div")
