@@ -9,6 +9,7 @@ var rename = require('gulp-rename')
 var babel = require('gulp-babel');
 var htmlmin = require('gulp-htmlmin');
 var webp = require('gulp-webp');
+var responsive = require('gulp-responsive')
 
 
 var baseDir = "./src"
@@ -53,12 +54,33 @@ gulp.task('imagemin', function() {
     .pipe(gulp.dest(targetDir + 'public'))
 })
 
-gulp.task('imageNextGen', function() {
+gulp.task('image-responsive', function() {
     return gulp.src(baseDir + '/assets/*')
+    .pipe(responsive({
+        '*.png': [
+            {
+                width: 200,
+                rename: { suffix: '-200px' }
+            },
+            {
+                width: 500,
+                rename: { suffix: '-500px' }
+            },
+            {
+                width: 800,
+                rename: { suffix: '-800px' }
+            }
+        ]
+    }))
     .pipe(imagemin([
         imagemin.mozjpeg({quality: 75, progressive: true}),
         imagemin.optipng({optimizationLevel: 5})
     ]))
+    .pipe(gulp.dest(targetDir + "public"))
+})
+
+gulp.task('imageNextGen', function() {
+    return gulp.src(targetDir + 'public/*')
     .pipe(webp())
     .pipe(gulp.dest(targetDir + "public"))
 })
