@@ -127,7 +127,7 @@ header li a {
   display: grid;
   grid-template-columns: 1fr 5fr 2fr;
   grid-template-rows: 1fr 2fr;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .landing picture {
@@ -148,7 +148,6 @@ header li a {
 .card-text {
   background: var(--background);
   padding: 2em;
-  overflow: hidden;
 }
 
 h1, h3 {

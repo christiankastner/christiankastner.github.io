@@ -163,19 +163,18 @@ document.addEventListener('DOMContentLoaded', function () {
       projectList.appendChild(li);
     });
   })(); // Populate Skills
+  // (function() {
+  //     for (const title in SKILLS) {
+  //         let li = document.createElement("li")
+  //         let h4 = document.createElement("h4")
+  //         h4.innerText = title
+  //         let p = document.createElement("p")
+  //         p.innerText = SKILLS[title].join(", ")
+  //         li.append(h4, p)
+  //         // skillList.appendChild(li)
+  //     }
+  // })();
 
-
-  (function () {
-    for (var title in SKILLS) {
-      var li = document.createElement("li");
-      var h4 = document.createElement("h4");
-      h4.innerText = title;
-      var p = document.createElement("p");
-      p.innerText = SKILLS[title].join(", ");
-      li.append(h4, p);
-      skillList.appendChild(li);
-    }
-  })();
 });
 "use strict";
 

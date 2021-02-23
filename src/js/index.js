@@ -179,18 +179,18 @@ document.addEventListener('DOMContentLoaded', function() {
     })();
 
     // Populate Skills
-    (function() {
-        for (const title in SKILLS) {
-            let li = document.createElement("li")
+    // (function() {
+    //     for (const title in SKILLS) {
+    //         let li = document.createElement("li")
             
-            let h4 = document.createElement("h4")
-            h4.innerText = title
+    //         let h4 = document.createElement("h4")
+    //         h4.innerText = title
 
-            let p = document.createElement("p")
-            p.innerText = SKILLS[title].join(", ")
+    //         let p = document.createElement("p")
+    //         p.innerText = SKILLS[title].join(", ")
 
-            li.append(h4, p)
-            skillList.appendChild(li)
-        }
-    })();
+    //         li.append(h4, p)
+    //         // skillList.appendChild(li)
+    //     }
+    // })();
 })
