@@ -10,6 +10,7 @@
   --link-hover:#e85454;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -19,15 +20,13 @@
 
 body {
   background-color:var(--background);
-  height: 100vh;
   font-family: "Muli", sans-serif;
   color: var(--text);
 }
 
 .content {
-  width: 100vw;
-  height: 100%;
-  overflow-x: hidden;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .root {
@@ -39,6 +38,10 @@ header, footer {
   width: 100%;
 }
 
+footer {
+  vertical-align: top;
+}
+
 footer, .skills {
   justify-content: center;
   text-align: center;
@@ -46,7 +49,7 @@ footer, .skills {
 }
 
 .skills {
-  padding: 2em 2em 0;
+  padding: 2rem;
   color: var(--background);
 }
 
@@ -59,7 +62,7 @@ footer, .skills {
 }
 
 .link-transition {
-  transition: all 0.7s linear;
+  transition: color 0.7s linear;
 }
 
 header {
@@ -71,6 +74,11 @@ header {
   top: 0;
   left: 0;
   position: sticky;
+}
+
+header nav {
+  max-width: 1200px;
+  margin: auto;
 }
 
 footer ul, header ul {
@@ -106,7 +114,6 @@ header li a {
   color: var(--background);
   text-decoration: none;
   transition: all 0.3s ease 0s;
-  padding: 1em;
 }
 
 .footer-links li a:hover, header li a:hover {
@@ -115,9 +122,8 @@ header li a {
 
 .landing {
   margin-top: 2em;
-  width: 100%;
+  width: auto;
   height: 50vw;
-  /* padding: 0 3em; */
   display: grid;
   grid-template-columns: 1fr 5fr 2fr;
   grid-template-rows: 1fr 2fr;
@@ -145,11 +151,12 @@ header li a {
   overflow: hidden;
 }
 
-h3 {
+h1, h3 {
   color: var(--headers);
   margin-bottom: .5em;
   text-transform: uppercase;
   font-size: 1.25em;
+  text-align: left;
 }
 
 .about {
@@ -203,6 +210,7 @@ p {
   padding-bottom: 2.5em;
 } 
 
+
 .text-container {
   display: flex;
   justify-content: space-evenly;
@@ -219,7 +227,7 @@ p {
 
 .project-card {
   margin: 0 1em;
-  padding: 2em 3em;
+  padding: 2em 1em;
 }
 
 .project-card img {
@@ -227,12 +235,7 @@ p {
   box-shadow: 0 10px 10px rgba(0,0,0,.12);
   transition: all 0.3s ease 0s;
   border-radius: 5px;
-  padding: 1em 0;
-  margin-bottom: 2em;
-}
-
-.project-card img:hover {
-  box-shadow: 0 30px 30px rgba(0,0,0,.25);
+  margin-bottom: 3rem;
 }
 
 .project-header {
@@ -249,6 +252,7 @@ p {
 
 .links li a {
   color: var(--link-hover);
+  text-decoration: underline;
 }
 
 .gradient {
@@ -256,11 +260,6 @@ p {
   background: var(--text-secondary);
   width: 100%;
   height: .2em;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 3em;
 }
 
 nav {
@@ -313,15 +312,17 @@ header svg {
   }
 
   .landing {
-    padding: 0 1em;
+    padding: 0;
     grid-template-columns: 4fr 2fr 2fr;
     grid-template-rows: 1fr 3fr;
   }
 
   .about {
+    padding: 4rem 0;
+    margin-left: auto;
     width: 90vw;
     height: 50vw;
-    padding: 4em 2em 0;
+    max-width: 100%;
     display: grid;
     grid-template-columns: 1.5fr 1fr 4fr ;
     grid-template-rows: 1fr 3.5fr 1fr;
@@ -378,13 +379,22 @@ header svg {
 }
 
 @media only screen and (min-width: 1000px) {
+
+  .about, .landing {
+    height: auto;
+  }
+
+  .about-card {
+    grid-row: 2 / 3;
+  }
+
   .project-card {
     margin: 0 80px;
     padding: 2em 100px;
   }
 
   .project-card img {
-    margin: 0 1em 2em;
+    margin: 0 auto 2rem;
   }
 }
 

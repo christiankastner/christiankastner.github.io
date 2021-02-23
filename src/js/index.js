@@ -1,14 +1,39 @@
 const ABOUT = [
-    "I'm an interdisciplinary frontend engineer with a passion for design and creativity. I love creating interesting and unique experiences through software and working with designers.",
-
-    "I'm actively seeking new opportunities with companies that value developers with an eye for detail and design.",
+    "Hi, I'm Christian. I'm a jack-of-all-trades developer, designer, and creative coder with a passion for experimentation. I love researching and spearheading interesting and unique experiences on the web and working with designers.",
     
-    "See some work samples below. I think that Virtual Canvas is my best work, showcasing an understanding of difficult web technologies including websockets and cloud storage as well as displaying thoughtful design and a creative web experience.",
+    "See some work samples below--a mix of client work and personal projects.",
     
     "You can reach me at christianmkastner@gmail.com."
 ]
 
 const PROJECTS = [
+    {
+        title: "Curran LLC",
+        img: "./public/curran.png",
+        meta: "Online Ecommerce Store",
+        description: "Currently work as a full stack web developer facilitating the creation of a new proprietary marketing website, as well as overhauling the existing suite of e-commerce websites under the Curran Company banner (Sisal Carpet, Curran Floor, Curran Home, and Curran Car). Working to decouple the existing Laravel setup and transition to using the JAMStack with a nuxt frontend, external vue ui library, contentful CMS, and a Laravel API backend.",
+        tags: ["Nuxt", "Vuex", "SCSS", "Tailwind", "Laravel", "PHP", "Google Tag Manager", "Google Analytics", "Agile", "Docker", "MySQL/MariaDB"],
+        active: "https://www.sisalcarpet.com/",
+        github: {},
+    },
+    {
+        title: "Ravo from Solve and Create LLC",
+        img: "./public/ravo.jpg",
+        meta: "Social Media Voting Platform",
+        description: "Worked as a front end partner to build reusable React components. Used lead developer's custom API endpoints to display user information, search through users and add/delete user following statuses (similar to instagram followers and linkedin connections). Worked with creative director and UI designer to build out UI mockups and UX interactions with Ravo's custom React library.",
+        demo: null,
+        github: {},
+        tags: ["React", "SCSS", "Node", "Phabricator", "Arcanist", "Git"]
+    },
+    {
+        title: "CBD THC Solution and East West Elixir",
+        img: "./public/menu.jpg",
+        meta: "Online Ecommerce Store and Marketing Website",
+        description: "Currently work as a web developer and designer for two CBD companies doing everything from product and graphic design to Wordpress, Godaddy, and Shopify site standup.",
+        tags: ["Wordpress", "CSS", "HTML", "GoDaddy Hosting", "Illustrator", "Photoshop"],
+        active: "https://eastwestelixir.com/",
+        github: {},
+    },
     {
         title: "Beat Poems",
         img: "./public/poems.png",
@@ -19,33 +44,19 @@ const PROJECTS = [
         github: {
             frontend: 'https://github.com/christiankastner/beat-poems',
         },
-        tags: ["JavaScript", "Webpack", "Babel", "SASS", "SVG", "Adobe Illustrator"]
+        tags: ["JavaScript", "Webpack", "Babel", "SASS", "SVG", "Illustrator"]
     },
     {
         title: "Virtual Canvas",
         img: "./public/virtual_canvas.png",
         meta: "Interactive Audio Visualizer",
         description: "A shared space for audio and visual artists to create on the same canvas simultaneously. By combining animation and audio in the browser with P5.js, UI state management with React Redux, and websocketing using ActionCable in rails, Virtual Canvas allows users to create shapes synced to audio and collaborate on a music visualizer together.",
-        demo: "https://www.youtube.com/embed/qsTvRDrYrx0",
         active: "https://christianmkastner.com/virtual-canvas/#/",
         github: {
             frontend: 'https://github.com/christiankastner/virtual-canvas',
             backend: 'https://github.com/christiankastner/virtual_canvas_backend_api'
         },
         tags: ["React", "Ruby on Rails", "Web Sockets", "Redux", "SASS", "Firebase Cloud Storage"]
-    },
-    {
-        title: "Kangaroo Hangout",
-        img: "./public/hangout.png",
-        meta: "Event Planning App",
-        description: "Want to plan a whole day's outing? Kangaroo Hangout is an event planning app that lets user's input places they'd like to go to, then search for nearby locations to also visit. Want Sushi after your Muay Thai class or a library near your favorite burger place? That's easy with kangaroo hangout.",
-        demo: "https://www.youtube.com/embed/iZrBZusBhJQ",
-        active: 'https://christianmkastner.com/kangaroo-hangout-frontend/#/',
-        github: {
-            frontend: 'https://github.com/christiankastner/kangaroo-hangout-frontend',
-            backend: 'https://github.com/christiankastner/kangaroo-hangout-backend-api'
-        },
-        tags: ["React", "Ruby on Rails", "JWT", "Google Places API", "Semantic UI"]
     },
 ]
 
@@ -72,7 +83,7 @@ const renderDemo = (url) => {
 const renderLinks = (...links) => {
     const ul = document.createElement("ul")
     ul.className = "links"
-    let newArray = links.filter(x => x).map(x => {
+    let newArray = links.filter(x => x.innerHTML).map(x => {
         const link = document.createElement("li")
         link.append(x)
         return link
@@ -127,8 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const h4 = document.createElement("h4")
             h4.innerText = project.meta
             const demo = document.createElement("a")
-            demo.innerText = "Live Site" || "Not Deployed, Currently Developing"
             if (project.active) {
+                demo.innerText = "Live Site"
                 demo.href = project.active
             }
 
